@@ -5,7 +5,7 @@
     - Ofentse Ramothibe (Group Leader)
     - SelenatorXO (add names)
     - Selepe Sello
-    - Tiyiso Hlungani
+    - Tiyiso Hlungwani
 
 - ###### Module: COS284 (Computer Organisation and Architecture)
 
@@ -165,7 +165,7 @@
 ## Section E: Minimum Requirements
 
 - #### `Requirements before running codes`:
-    - Install an `IDE` that `compiles` and `runs` Java codes. Recommendation `VS Code`
+    - Install an `IDE` that `compiles` and `runs` Assembly codes. Recommendation `VS Code`
     - How to setup `WSL` Ubuntu terminal shell and run it from `Visual Studio Code`: [Visit-Link](https://www.youtube.com/watch?v=fp45HpZuhS8&t=112s)
     - Installing `NASM` / How to Run NASM Code in `Windows`: [Visit-Link](https://youtu.be/pL6u5Ieg86A?feature=shared)
 
