@@ -11,8 +11,8 @@ int main()
         printf("Warning: Previous Deliverables are not fully correct and might affect Deliverable 3\n");
     }
 
-    // float marks = testDeliverable3();
     float marks = testDeliverable1() + testDeliverable2();
+    marks += testDeliverable3();
     printf("Total Marks %.f\n", marks);
 
     return 0;
