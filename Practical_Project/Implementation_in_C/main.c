@@ -102,26 +102,41 @@ bool simulateDfa(DFA* dfa, const char* inputString) {
     if (dfa == NULL || inputString == NULL) {
         return false;
     }
-    int currentState = dfa->startState; // Start from the initial state
-    for (int i = 0; inputString[i] != '\0'; i++) {
-        char symbol = inputString[i];
+
+    State *currentState = NULL;
+
+    for(int i = 0; i < dfa->numStates; i++) {
+        if(dfa->states[i].id == dfa->startState) {
+            currentState = &(dfa->states[i]);
+            break;
+        }
+    }
+
+    if (currentState == NULL) {
+        return false;
+    }
+
+    for(const char *c = inputString; *c != '\0'; c++) {
+        char symbol = *c;
         bool transitionFound = false;
 
-        // Check if there is a transition from the current state with the given symbol
-        for (int j = 0; j < dfa->numTransitions; j++) {
-            if (dfa->transitions[j].from == currentState && dfa->transitions[j].symbol == symbol) {
-                currentState = dfa->transitions[j].to;
+        // Check transitions
+        for(int i = 0; i < dfa->numTransitions; i++) {
+            if(dfa->transitions[i].from == currentState->id && dfa->transitions[i].symbol == symbol) {
+                currentState = &(dfa->states[dfa->transitions[i].to]);
                 transitionFound = true;
                 break;
             }
         }
-        // If no transition is found for the symbol, reject the input
-        if (!transitionFound) {
+
+        // No valid transition found for the symbol
+        if(!transitionFound) {
             return false;
         }
     }
+
     // Check if the final state is an accepting state
-    return dfa->states[currentState].isAccepting;
+    return currentState->isAccepting;
 }
 
 // This function will return true if the two DFA represent the same language, otherwise it will return false.
