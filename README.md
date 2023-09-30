@@ -143,7 +143,7 @@
     - δ₁, δ₂:  The transition functions, δ₁: Q₁×Σ→Q₁ and δ₂: Q₂×Σ→Q₂.
     - F₁, F₂:  The sets of accepting states in A₁ and A₂, respectively.
 
-- ##### Constructing A<sub>d</sub>
+- ##### Constructing A<sub>k</sub>
 
     - States: Qₖ = Q₁ × Q₂
     - Alphabet: Σₖ = Σ
