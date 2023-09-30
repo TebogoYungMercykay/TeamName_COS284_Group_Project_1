@@ -13,6 +13,11 @@
 
 - ###### Best Mark:  00 / 100
 
+- ###### Directories:
+
+    - C-Code: ./Project/Implementation_in_C/files_here
+    - Assembly-Code: ./Project/NASM_x86-64_Code/files_here
+
 
 
 ---
@@ -156,7 +161,7 @@
 
     - Combined DFA Aₖ:
 
-        <img src="./_Images/Combined.png" alt="Two DFAs" width="500" height="500">
+        <img src="./_Images/Combined.png" alt="Two DFAs" width="400" height="280">
 
 
 ---
