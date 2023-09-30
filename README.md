@@ -15,8 +15,8 @@
 
 - ###### Directories:
 
-    - C-Code: ./Project/Implementation_in_C/files_here
-    - Assembly-Code: ./Project/NASM_x86-64_Code/files_here
+    - C-Code: ./Practical_Project/Implementation_in_C/files_here
+    - Assembly-Code: ./Practical_Project/NASM_x86-64_Code/files_here
 
 
 
