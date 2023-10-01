@@ -2,3 +2,6 @@
 
 *.o
 test
+*.tar
+*.tar.gz
+*.zip
