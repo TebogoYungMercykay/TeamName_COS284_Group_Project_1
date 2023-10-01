@@ -29,5 +29,10 @@ debug: $(EXECUTABLE)
 
 clean:
 	rm -f $(ASM_OBJECTS) $(C_TEST_OBJECTS) $(EXECUTABLE)
+	reset
+	clear
 
 fresh: clean all
+
+tar:
+	tar -cvz *.asm -f Group_Project.tar.gz
