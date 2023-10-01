@@ -1,3 +1,7 @@
 # Add filenames Here
 
 *.o
+test
+*.tar
+*.tar.gz
+*.zip
