@@ -21,79 +21,79 @@ int main() {
 
 // * Implementation in C
 // This function will read the file and construct the DFA
-DFA* readDfa(const char *filename) {
-    FILE *file = fopen(filename, "r");
-    if (file == NULL) {
+DFA* readDfa(const char* filename) {
+    FILE* myFile = fopen(filename, "r");
+    if (myFile == NULL) {
         return NULL;
-    }
+    } else {
+        int numStates, numTransitions;
+        fscanf(myFile, "%d,%d\n", &numStates, &numTransitions);
 
-    int numStates, numTransitions;
-    fscanf(file, "%d,%d\n", &numStates, &numTransitions);
-
-    // Allocate memory for the DFA structure
-    DFA *dfa = (DFA *)malloc(sizeof(DFA));
-    if (dfa == NULL) {
-        fclose(file);
-        return NULL;
-    }
-
-    // Initialize DFA fields
-    dfa->numStates = numStates;
-    dfa->numTransitions = numTransitions;
-    dfa->startState = 0; // Starting state is always 0
-
-    // Allocate memory for states and transitions
-    dfa->states = (State *)malloc(numStates * sizeof(State));
-    dfa->transitions = (Transition *)malloc(numTransitions * sizeof(Transition));
-
-    if (dfa->states == NULL || dfa->transitions == NULL) {
-        free(dfa->states);
-        free(dfa->transitions);
-        fclose(file);
-        free(dfa);
-        return NULL;
-    }
-
-    // Read state IDs
-    for (int i = 0; i < numStates; i++) {
-        if (i < numStates - 1) {
-            fscanf(file, "%d,", &dfa->states[i].id);
-        } else {
-            fscanf(file, "%d\n", &dfa->states[i].id);
-        }
-        // Initialize all states as non-accepting
-        dfa->states[i].isAccepting = false;
-    }
-
-    // Read accepting state IDs
-    char accept_states_line[256];
-    if (fgets(accept_states_line, sizeof(accept_states_line), file) != NULL) {
-        char *token = strtok(accept_states_line, ",");
-        while (token != NULL) {
-            int state_id = atoi(token);
-            if (state_id >= 0 && state_id < numStates) {
-                dfa->states[state_id].isAccepting = true;
-            }
-            token = strtok(NULL, ",");
-        }
-    }
-
-    // Read transitions
-    for (int i = 0; i < numTransitions; i++) {
-        int from, to;
-        char symbol;
-        fscanf(file, "%d,%d,%c", &from, &to, &symbol);
-        if (from >= 0 && from < numStates && to >= 0 && to < numStates) {
-            dfa->transitions[i].from = from;
-            dfa->transitions[i].to = to;
-            dfa->transitions[i].symbol = symbol;
-        } else {
+        // Allocate memory for the DFA structure
+        DFA* createDFA = (DFA* )malloc(sizeof(DFA));
+        if (createDFA == NULL) {
+            fclose(myFile);
             return NULL;
         }
-    }
 
-    fclose(file);
-    return dfa;
+        // Initialize DFA fields
+        createDFA->numStates = numStates;
+        createDFA->numTransitions = numTransitions;
+        createDFA->startState = 0; // Starting state is always 0
+
+        // Allocate memory for states and transitions
+        createDFA->states = (State* )malloc(numStates* sizeof(State));
+        createDFA->transitions = (Transition* )malloc(numTransitions* sizeof(Transition));
+
+        if (createDFA->states == NULL || createDFA->transitions == NULL) {
+            free(createDFA->states);
+            free(createDFA->transitions);
+            fclose(myFile);
+            free(createDFA);
+            return NULL;
+        }
+
+        // Read state IDs
+        for (int i = 0; i < numStates; i++) {
+            if (i < numStates - 1) {
+                fscanf(myFile, "%d,", &createDFA->states[i].id);
+            } else {
+                fscanf(myFile, "%d\n", &createDFA->states[i].id);
+            }
+            // Initialize all states as non-accepting
+            createDFA->states[i].isAccepting = false;
+        }
+
+        // Read accepting state IDs
+        char accept_states_line[256];
+        if (fgets(accept_states_line, sizeof(accept_states_line), myFile) != NULL) {
+            char* token = strtok(accept_states_line, ",");
+            while (token != NULL) {
+                int state_id = atoi(token);
+                if (state_id >= 0 && state_id < numStates) {
+                    createDFA->states[state_id].isAccepting = true;
+                }
+                token = strtok(NULL, ",");
+            }
+        }
+
+        // Read transitions
+        for (int i = 0; i < numTransitions; i++) {
+            int from, to;
+            char symbol;
+            fscanf(myFile, "%d,%d,%c", &from, &to, &symbol);
+            if (from >= 0 && from < numStates && to >= 0 && to < numStates) {
+                createDFA->transitions[i].from = from;
+                createDFA->transitions[i].to = to;
+                createDFA->transitions[i].symbol = symbol;
+            } else {
+                return NULL;
+            }
+        }
+
+        fclose(myFile);
+        return createDFA;
+    }
 }
 
 
