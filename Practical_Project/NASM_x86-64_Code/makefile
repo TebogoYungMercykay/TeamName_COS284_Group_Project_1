@@ -35,4 +35,5 @@ clean:
 fresh: clean all
 
 tar:
+	rm -f *.tar.gz
 	tar -cvz *.asm *.inc -f Test_Group_Project.tar.gz
