@@ -3,7 +3,7 @@
 - #### TeamnameHere
 
   - Ofentse Ramothibe (Group Leader)
-  - SelenatorXO (add names)
+  - Thashlene Moodley
   - Selepe Sello
   - Tiyiso Hlungwani
 - ###### Module: COS284 (Computer Organisation and Architecture)
