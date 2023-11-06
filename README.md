@@ -27,7 +27,7 @@
 
 ---
 
-## Section B: Deliverable 1 (*)
+## Section B: Deliverable 1
 
 - We first need to construct a DFA. The DFA will be specified in a file, and our program will read the file to build the DFA.
 - The structures used will be as follows
@@ -89,7 +89,7 @@
     <img src="./_Images/DFA.png" alt="DFA Image" width="400" height="200">
   - Take note that there are 6 transitions in this DFA as previously specified.
 
-## Section B: Deliverable 2 (*)
+## Section B: Deliverable 2
 
 - Now that we can construct DFA, we need to be able to simulate input strings over them.
 - We will do this by implementing the following interface:
@@ -106,7 +106,7 @@
   ```
 - And assuming the DFA is the same as the one specified in the previous deliverable, the output would be true. It is up to us to figure out how boolean values work in C and how to use them in assembly. The input strings will be C strings.
 
-## Section C: Deliverable 3 (*)
+## Section C: Deliverable 3
 
 - Now that we can construct DFA and simulate input strings over them, we need to be able to check if two DFA represent the same language.
 - We will do this by implementing the following interface:
