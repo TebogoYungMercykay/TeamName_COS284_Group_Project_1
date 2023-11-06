@@ -7,8 +7,6 @@
   - Selepe Sello
   - Tiyiso Hlungwani
 - ###### Module: COS284 (Computer Organisation and Architecture)
-- ###### Due Date: 05 November 2023, 22:30
-- ###### Best Mark:  89 / 100
 - ###### Directories:
 
   - C-Code: ./Practical_Project/Implementation_in_C/files_here
